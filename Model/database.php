@@ -1,11 +1,11 @@
 <?php
 
-$userdb = "322965_account";
+$userdb = "322975";
 $pass = 'Leboncoindubled123456789!';
 
 try {
 
-  $db = new PDO('mysql:host=mysql-lemauvaiscoin.alwaysdata.net;dbname=lemauvaiscoin_database', $userdb, $pass);
+  $db = new PDO('mysql:host=mysql-lecoinrond.alwaysdata.net;dbname=lecoinrond_database', $userdb, $pass);
 
 } catch (PDOException $e) {
 
