@@ -1,7 +1,5 @@
 <?php
 
-require_once("../Model/config.php");
-
 class DatabaseClass {
   private $host;
   private $username;
