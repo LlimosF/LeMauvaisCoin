@@ -3,16 +3,21 @@
 class DatabaseClass {
   private $host;
   private $username;
-  private $password;
+  private $passworddb;
   private $database;
   private $connection;
 
-  public function __construct($host, $username, $password, $database) {
+  public function __construct($host, $username, $passworddb, $database) {
 
     $this->host = $host;
     $this->username = $username;
-    $this->password = $password;
+    $this->passworddb = $passworddb;
     $this->database = $database;
+
+    $host = "mysql-lecoinrond.alwaysdata.net";
+    $username = "322975";
+    $passworddb = "Leboncoindubled123456789!";
+    $database = "lecoinrond_database";
 
   }
 
@@ -22,7 +27,7 @@ class DatabaseClass {
 
     try {
 
-      $this->connection = new PDO($dsn, $this->username, $this->password);
+      $this->connection = new PDO($dsn, $this->username, $this->passworddb);
 
       $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -33,5 +38,24 @@ class DatabaseClass {
     }
     
   }
-  
+
+  public function prepareQuery($query) {
+
+    if (!$this->connection) {
+
+      $this->connect();
+
+    }
+
+    try {
+
+      $statement = $this->connection->prepare($query);
+      return $statement;
+
+    } catch (PDOException $e) {
+
+      die("Erreur lors de la préparation de la requête : " . $e->getMessage());
+
+    }
+  }
 }

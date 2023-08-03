@@ -1,3 +1,11 @@
+<?php
+
+require_once("../Controller/userClass.php");
+require_once("../Controller/registrationClass.php");
+require_once("../Controller/databaseClass.php");
+
+?>
+
 <div class="">
   <form method="POST">
     <div class="bloc-form">
