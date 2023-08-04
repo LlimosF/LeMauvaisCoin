@@ -1,61 +1,40 @@
 <?php
 
-class DatabaseClass {
-  private $host;
-  private $username;
-  private $passworddb;
-  private $database;
-  private $connection;
+class databaseClass {
 
-  public function __construct($host, $username, $passworddb, $database) {
+  private $host = "mysql-lecoinrond.alwaysdata.net";
+  private $db_name = "lebonrond_database";
 
-    $this->host = $host;
-    $this->username = $username;
-    $this->passworddb = $passworddb;
-    $this->database = $database;
+  private $username = "322975";
 
-    $host = "mysql-lecoinrond.alwaysdata.net";
-    $username = "322975";
-    $passworddb = "Leboncoindubled123456789!";
-    $database = "lecoinrond_database";
+  private $password = "Leboncoindubled123456789!";
 
-  }
+  private $conn;
 
-  public function connect() {
+  public function getConnection(){
 
-    $dsn = "mysql:host=$this->host;dbname=$this->database;charset=utf8mb4";
+    $this->conn = null;
 
     try {
 
-      $this->connection = new PDO($dsn, $this->username, $this->passworddb);
+      $this->conn = new PDO (
 
-      $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        "mysql:host=" . $this->host. ";dbname=" . $this->db_name,
+        $this->username,
+        $this->password
 
-    } catch (PDOException $e) {
+      );
 
-      die("Échec de la connexion à la base de donnée : " . $e->getMessage());
-      
+      $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    } catch (PDOException $exception) {
+
+      echo "Erreur de connexion : " . $exception->getMessage();
+
     }
-    
+
+    return $this->conn;
+
   }
 
-  public function prepareQuery($query) {
-
-    if (!$this->connection) {
-
-      $this->connect();
-
-    }
-
-    try {
-
-      $statement = $this->connection->prepare($query);
-      return $statement;
-
-    } catch (PDOException $e) {
-
-      die("Erreur lors de la préparation de la requête : " . $e->getMessage());
-
-    }
-  }
 }
