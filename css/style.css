@@ -1,4 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
+
 * {
   padding: 0;
   margin: 0;
+  font-family: 'Belanosima', sans-serif;
 }
+
+/* HEADER */
+/* HEADER */
+/* HEADER */
+
+.header {
+  height: 100px;
+  box-shadow: 0 0 15px black;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+h1 {
+  color: rgb(176, 187, 23);
+}
+
+.btn {
+  color: white;
+  font-family: 'Belanosima', sans-serif;
+  background-color: rgb(176, 187, 23);
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+  font-size: 15px;
+}
+
+.ul-link > li {
+  display: inline;
+  text-decoration: none;
+}
+
+/* END HEADER */
+/* END HEADER */
+/* END HEADER */

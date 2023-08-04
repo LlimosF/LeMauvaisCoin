@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Database.php';
-require_once 'User.php';
+require_once 'databaseClass.php';
+require_once 'userClass.php';
 
 $db = new databaseClass();
 $conn = $db->getConnection();
