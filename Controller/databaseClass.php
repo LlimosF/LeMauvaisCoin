@@ -3,7 +3,7 @@
 class databaseClass {
 
   private $host = "mysql-lecoinrond.alwaysdata.net";
-  private $db_name = "lebonrond_database";
+  private $db_name = "lecoinrond_database";
   private $username = "322975";
   private $password = "Leboncoindubled123456789!";
   private $conn;

@@ -11,20 +11,18 @@
     />
     <title>Le coin rond</title>
   </head>
-<header class="header">
-  <ul>
-    <li><h1>LeMauvaisCoin</h1></li>
-    <li><button class="btn">Déposer une annonce</button></li>
-  </ul>
-  <div class="link">
-    <nav>
-      <ul class="ul-link">
-        <li><a href="">Automobile</a></li>
-        <li><a href="">Immobilier</a></li>
-        <li><a href="">Prêt à porter</a></li>
-        <li><a href="">Multimédia</a></li>
-        <li><a href="">Mobilier</a></li>
-      </ul>
+  <header class="header">
+    <nav class="navbar container">
+      <h1><a href="index.php">Lemauvaiscoin</a></h1>
+      <input type="checkbox" id="toggler" />
+      <label for="toggler"><img src="media/burger.png" class="burgerLogo"></img></label>
+      <div class="menu">
+        <ul class="list">
+          <a href="index.php"><li class="LiNavTop">Désoser une annonce</li></a>
+          <a href="index.php"><li class="LiNavTop">Mes annonces</li></a>
+          <a href="login.php"><li class="LiNavTop">Se connecter</li></a>
+          <a href="index.php"><li class="LiNavTop">Se déconnecter</li></a>
+        </ul>
+      </div>
     </nav>
-  </div>
-</header>
+  </header>

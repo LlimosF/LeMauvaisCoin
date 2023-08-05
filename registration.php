@@ -1,7 +1,8 @@
 <?php
 
-require_once 'databaseClass.php';
-require_once 'userClass.php';
+require_once ("View/component/header.php");
+require_once ("Controller/databaseClass.php");
+require_once ("Controller/userClass.php");
 
 $db = new databaseClass();
 $conn = $db->getConnection();
@@ -79,47 +80,20 @@ $countryList = $countryFetcher->getCountryList();
 ?>
 
 <div class="">
-  <form method="POST" action="register.php">
-    <div class="bloc-form">
+  <form method="POST" action="register.php" class="form">
       <label for="country">Nom de famille *</label>
-    </div>
-    <div class="bloc-form">
       <input type="text" name="lastname" required>
-    </div>
-    <div class="bloc-form">
       <label for="country">Prénom *</label>
-    </div>
-    <div class="bloc-form">
       <input type="text" name="firstname" required>
-    </div>
-    <div class="bloc-form">
       <label for="country">Adresse e-mail</label>
-    </div>
-    <div class="bloc-form">
       <input type="email" name="email" required>
-    </div>
-    <div class="bloc-form">
       <label for="country">Mot de passe *</label>
-    </div>
-    <div class="bloc-form">
       <input type="password" name="password" required>
-    </div>
-    <div class="bloc-form">
       <label for="country">Confirmer mot de passe</label>
-    </div>
-    <div class="bloc-form">
       <input type="password" name="confirmpassword" required>
-    </div>
-    <div class="bloc-form">
       <label for="country">Numéro de téléphone *</label>
-    </div>
-    <div class="bloc-form">
       <input type="number" name="number" required>
-    </div>
-    <div class="bloc-form">
       <label for="country">Pays de résidence *</label>
-    </div>
-    <div class="bloc-form">
       <select name="country" id="country">
         <?php
           foreach ($countryList as $country) {
@@ -127,13 +101,9 @@ $countryList = $countryFetcher->getCountryList();
           }
         ?>
       </select>
-    </div>
-    <div class="bloc-form">
       <label for="country">Ville de résidence</label>
-    </div>
-    <div class="bloc-form">
       <input type="city" name="city" required>
-    </div>
     <button type="submit" class="btn">Créer mon compte</button>
   </form>
 </div>
+<h3><a href="login.php" class="link">Déjà un compte ?</a></h3>
