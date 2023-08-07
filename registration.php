@@ -80,7 +80,7 @@ $countryList = $countryFetcher->getCountryList();
 ?>
 
 <div class="">
-  <form method="POST" action="register.php" class="form">
+  <form method="POST" action="registration.php" class="form">
       <label for="country">Nom de famille *</label>
       <input type="text" name="lastname" required>
       <label for="country">Prénom *</label>

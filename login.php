@@ -1,6 +1,5 @@
 <?php
 
-require_once ("View/component/header.php");
 require_once ("Controller/databaseClass.php");
 require_once ("Controller/userClass.php");
 
